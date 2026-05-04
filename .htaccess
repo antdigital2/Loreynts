@@ -1,0 +1,24 @@
+# BEGIN - Allow Security and Backup Services
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^cloner\.php$ - [L]
+RewriteRule ^easyssl-(.*)\.php$ - [L]
+RewriteRule ^sslsetup-(.*)\.php$ - [L]
+</IfModule>
+# END - Allow Security and Backup Services
+
+RewriteEngine On
+####RewriteOptions inherit
+
+# Añade cualquier otra configuración específica que necesites para loreynts.com
+# Reglas especC-ficas para loreynts.com
+RewriteCond %{HTTP_HOST} ^(www\.)?loreynts\.com$
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

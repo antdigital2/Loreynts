@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'MrDafone_Regular';
+    src: url('https://loreynts.com/public/construction/MrDafoe_Regular.ttf') format('truetype'); /* Formato para compatibilidad */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evita el scroll */
+}
+
+.construction-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Vista completa de la altura de la pantalla */
+    overflow: hidden;
+}
+
+.construction-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /*color: white;*/
+    font-family: 'MrDafone_Regular'; /*, cursive*/
+}
+
+.construction-title {
+    font-size: 85px; /* Tamaè´–o de fuente responsivo */
+    background: -webkit-linear-gradient(#29ABE2, #FF00FF); /* Gradiente para WebKit */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*background: linear-gradient(#FF1577, #FED87F);*/ /* Gradiente para navegadores modernos */
+    /*display: inline;*/
+}
+
+.construction-text {
+    font-size: 75px; /* Tamaè´–o de fuente responsivo */
+    background: -webkit-linear-gradient(#29ABE2, #FF00FF); /* Gradiente para WebKit */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*background: linear-gradient(#FF1577, #FED87F);*/ /* Gradiente para navegadores modernos */
+    display: inline;
+}
+
+@media screen and (max-width: 768px) {
+    /* Ajustes para pantallas medianas */
+    .construction-title {
+        font-size: 65px;
+    }
+    
+    .construction-text {
+        font-size: 55px; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Ajustes para pantallas pequeè´–as */
+    .construction-title {
+        font-size: 45px;
+    }
+    
+    .construction-text {
+        font-size: 35px; 
+    }
+}
