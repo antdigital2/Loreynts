@@ -148,11 +148,8 @@ $(function () {
             $('.payment-body .payment-description').text(paymentDescription);
         }
 
-        if (!firstName || !lastName || !billingAddress || !city || !state || !postcode || !country) {
-            $('#billingInformation').collapse('show');
-        } else {
+        // Billing info hidden - not required
             $('#billingInformation').collapse('hide');
-        }
         $('#checkout-amount').val(amount);
     });
 
@@ -440,12 +437,14 @@ var checkout = {
      * Prefills user billing data, if available
      */
     prefillBillingDetails: function () {
-        $('input[name="firstName"]').val(checkout.paymentData.firstName);
-        $('input[name="lastName"]').val(checkout.paymentData.lastName);
-        $('input[name="billingCity"]').val(checkout.paymentData.city);
-        $('input[name="billingState"]').val(checkout.paymentData.state);
-        $('input[name="billingPostcode"]').val(checkout.paymentData.postcode);
-        $('textarea[name="billingAddress"]').val(checkout.paymentData.billingAddress);
+        // Billing fields hidden - set empty to skip validation
+        checkout.paymentData.firstName = checkout.paymentData.firstName || '';
+        checkout.paymentData.lastName = checkout.paymentData.lastName || '';
+        checkout.paymentData.city = checkout.paymentData.city || '';
+        checkout.paymentData.state = checkout.paymentData.state || '';
+        checkout.paymentData.postcode = checkout.paymentData.postcode || '';
+        checkout.paymentData.billingAddress = checkout.paymentData.billingAddress || '';
+        checkout.paymentData.country = checkout.paymentData.country || '';
     },
 
     /**

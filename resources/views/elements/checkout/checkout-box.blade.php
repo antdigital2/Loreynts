@@ -64,7 +64,7 @@
                             </div>
                         </div>
 
-                        <div id="accordion" class="mb-3">
+                        <div id="accordion" class="mb-3 d-none">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between" id="headingOne" data-toggle="collapse" data-target="#billingInformation" aria-expanded="true" aria-controls="billingInformation">
                                     <h6 class="mb-0">
